@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,17 +25,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        try{
+            BancoController crud = new BancoController(getBaseContext());
+            Cursor cursor = crud.carregaDados();
 
-     /*   BancoController crud = new BancoController(getBaseContext());
-        Cursor cursor = crud.carregaDados();
+            String[] nomeCampos = new String[] {"idNota","titulo","conteudo"};
+            int[] idViews = new int[] {R.id.tituloNota, R.id.conteudoNota};
 
-        String[] nomeCampos = new String[] {"titulo","conteudo"};
-        int[] idViews = new int[] {R.id.tituloNota, R.id.txtNota};
+            SimpleCursorAdapter adaptador = new SimpleCursorAdapter(getBaseContext(),
+                    R.layout.list_item,cursor,nomeCampos,idViews, 0);
+            lista = findViewById(R.id.listView);
+            lista.setAdapter(adaptador);
+        }catch (Exception ex){
+            System.out.print(ex.getMessage());
+            Toast.makeText(this, ex.getMessage(), Toast.LENGTH_LONG).show();
+        }
 
-        SimpleCursorAdapter adaptador = new SimpleCursorAdapter(getBaseContext(),
-                R.layout.list_item,cursor,nomeCampos,idViews, 0);
-        lista = findViewById(R.id.listView);
-        lista.setAdapter(adaptador);*/
     }
 
     public void IrCad(View view) {
