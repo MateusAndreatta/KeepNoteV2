@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 //Alert de confirmação do excluir
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle("Opções");
-                builder.setMessage("selecione uma opção");
+                builder.setMessage("Edite ou exclua essa nota, ou simplesmente clique fora dessa caixa para cancelar");
                 builder.setPositiveButton("Editar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface arg0, int arg1) {
                         editar(position);
