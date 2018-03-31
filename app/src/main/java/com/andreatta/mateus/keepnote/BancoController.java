@@ -35,16 +35,11 @@ public class BancoController {
             return "Registro Inserido com sucesso";
     }
 
-    public void update(int id,String titulo, String corpo){
-        ContentValues values = new ContentValues();
-        values.put("titulo", titulo);
-        values.put("conteudo",corpo);
-
-        bd.update("notas_tb",values,"_id = "+id,null);
-    }
-
-    public void delete(int id){
-        bd.delete("notas_tb","_id = "+id,null);
+    public void deletaRegistro(int id){
+        String where = "_id" + "=" + id;
+        bd = banco.getReadableDatabase();
+        bd.delete("notas_tb",where,null);
+        bd.close();
     }
 
     public Cursor carregaDados(){
@@ -58,5 +53,35 @@ public class BancoController {
         }
         bd.close();
         return cursor;
+    }
+
+    public Cursor carregaDadoById(int id){
+        Cursor cursor;
+        String[] campos =  {"_id","titulo","conteudo"};
+        String where = "_id" + "=" + id;
+        bd = banco.getReadableDatabase();
+        cursor = bd.query("notas_tb",campos,where, null, null, null, null, null);
+
+        if(cursor!=null){
+            cursor.moveToFirst();
+        }
+        bd.close();
+        return cursor;
+    }
+
+    public void alteraRegistro(int id, String titulo, String conteudo){
+        ContentValues valores;
+        String where;
+
+        bd = banco.getWritableDatabase();
+
+        where = "_id" + "=" + id;
+
+        valores = new ContentValues();
+        valores.put("titulo", titulo);
+        valores.put("conteudo", conteudo);
+
+        bd.update("notas_tb",valores,where,null);
+        bd.close();
     }
 }

@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CadastrarNota"></activity>
+        <activity android:name=".CadastrarNota" />
+        <activity android:name=".EditarNota"></activity>
     </application>
 
 </manifest>
