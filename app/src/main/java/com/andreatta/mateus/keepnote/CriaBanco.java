@@ -18,7 +18,7 @@ public class CriaBanco extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("CREATE TABLE notas_tb(idNota integer primary key autoincrement,titulo text not null, conteudo text not null);");
+        sqLiteDatabase.execSQL("CREATE TABLE notas_tb(_id integer primary key autoincrement,titulo text not null, conteudo text not null);");
     }
 
     @Override

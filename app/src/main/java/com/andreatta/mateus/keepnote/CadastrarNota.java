@@ -33,8 +33,15 @@ public class CadastrarNota extends AppCompatActivity {
                 resultado = crud.inserir(tituloString,notaString);
 
                 Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
+                VoltarTela();
+
             }
         });
+    }
+
+    private void VoltarTela(){
+        Intent Tela = new Intent(this, MainActivity.class);
+        startActivity(Tela);
     }
 
 }

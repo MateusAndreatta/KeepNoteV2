@@ -40,16 +40,16 @@ public class BancoController {
         values.put("titulo", titulo);
         values.put("conteudo",corpo);
 
-        bd.update("notas_tb",values,"idNota = "+id,null);
+        bd.update("notas_tb",values,"_id = "+id,null);
     }
 
     public void delete(int id){
-        bd.delete("notas_tb","idNota = "+id,null);
+        bd.delete("notas_tb","_id = "+id,null);
     }
 
     public Cursor carregaDados(){
         Cursor cursor;
-        String[] campos =  {"idNota","titulo","conteudo"};
+        String[] campos =  {"_id","titulo","conteudo"};
         bd = banco.getReadableDatabase();
         cursor = bd.query("notas_tb", campos, null, null, null, null, null, null);
 

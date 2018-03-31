@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/KeepNote.iml" filepath="$PROJECT_DIR$/KeepNote.iml" />
+      <module fileurl="file://C:\Users\Fabio\AndroidStudioProjects\KeepNoteV2\KeepNote.iml" filepath="C:\Users\Fabio\AndroidStudioProjects\KeepNoteV2\KeepNote.iml" />
+      <module fileurl="file://$PROJECT_DIR$/KeepNoteV2.iml" filepath="$PROJECT_DIR$/KeepNoteV2.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\Fabio\AndroidStudioProjects\KeepNoteV2\app\app.iml" filepath="C:\Users\Fabio\AndroidStudioProjects\KeepNoteV2\app\app.iml" />
     </modules>
   </component>
 </project>
